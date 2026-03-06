@@ -1,0 +1,213 @@
+body{
+background:#f3f8ff;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+overflow:hidden;
+font-family:Arial;
+}
+
+/* bouquet container */
+
+.bouquet{
+position:relative;
+width:300px;
+height:320px;
+animation:appear 2s ease;
+}
+
+/* flowers */
+
+.flower{
+position:absolute;
+width:40px;
+height:40px;
+border-radius:50%;
+transform:scale(0);
+animation:bloom 1.4s forwards;
+}
+
+/* bloom animation */
+
+@keyframes bloom{
+0%{transform:scale(0);}
+80%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+
+/* flowers */
+
+.f1{
+top:40px;
+left:130px;
+background:#1e3a8a;
+box-shadow:-20px 0 #1e3a8a,20px 0 #1e3a8a,0 -20px #1e3a8a,0 20px #1e3a8a;
+animation-delay:0.2s;
+}
+
+.f2{
+top:70px;
+left:90px;
+background:#2563eb;
+box-shadow:-20px 0 #2563eb,20px 0 #2563eb,0 -20px #2563eb,0 20px #2563eb;
+animation-delay:0.4s;
+}
+
+.f3{
+top:70px;
+left:170px;
+background:#3b82f6;
+box-shadow:-20px 0 #3b82f6,20px 0 #3b82f6,0 -20px #3b82f6,0 20px #3b82f6;
+animation-delay:0.6s;
+}
+
+.f4{
+top:110px;
+left:60px;
+background:#60a5fa;
+box-shadow:-20px 0 #60a5fa,20px 0 #60a5fa,0 -20px #60a5fa,0 20px #60a5fa;
+animation-delay:0.8s;
+}
+
+.f5{
+top:110px;
+left:200px;
+background:#93c5fd;
+box-shadow:-20px 0 #93c5fd,20px 0 #93c5fd,0 -20px #93c5fd,0 20px #93c5fd;
+animation-delay:1s;
+}
+
+.f6{
+top:150px;
+left:130px;
+background:#2563eb;
+box-shadow:-20px 0 #2563eb,20px 0 #2563eb,0 -20px #2563eb,0 20px #2563eb;
+animation-delay:1.2s;
+}
+
+/* bouquet wrap */
+
+.wrap{
+position:absolute;
+bottom:-10px;
+left:50%;
+transform:translateX(-50%);
+width:220px;
+height:200px;
+background:#c89b6d;
+
+clip-path:polygon(
+10% 20%,
+90% 20%,
+100% 70%,
+50% 100%,
+0% 70%
+);
+
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+z-index:-1;
+}
+
+/* paper folds */
+
+.wrap::before,
+.wrap::after{
+content:'';
+position:absolute;
+top:10px;
+width:60px;
+height:120px;
+background:#d4a373;
+}
+
+.wrap::before{
+left:-30px;
+transform:rotate(-20deg);
+}
+
+.wrap::after{
+right:-30px;
+transform:rotate(20deg);
+}
+
+/* yellow sparkles */
+
+.sparkle{
+position:absolute;
+width:6px;
+height:6px;
+background:#ffd84d;
+border-radius:50%;
+opacity:0;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+0%{opacity:0; transform:scale(0);}
+50%{opacity:1; transform:scale(1.6);}
+100%{opacity:0; transform:scale(0);}
+}
+
+.s1{top:40px; left:40px;}
+.s2{top:80px; left:240px; animation-delay:1s;}
+.s3{top:10px; left:150px; animation-delay:2s;}
+.s4{top:150px; left:40px; animation-delay:1.5s;}
+.s5{top:130px; left:250px; animation-delay:0.5s;}
+.s6{top:60px; left:200px; animation-delay:2.5s;}
+
+/* message */
+
+.message{
+margin-top:40px;
+text-align:center;
+font-size:18px;
+color:#1e3a8a;
+max-width:420px;
+animation:appear 2s ease;
+}
+
+/* red floating hearts */
+
+.heart{
+position:absolute;
+width:12px;
+height:12px;
+background:#ff4d4d;
+transform:rotate(45deg);
+animation:float 7s infinite;
+}
+
+.heart::before,
+.heart::after{
+content:'';
+position:absolute;
+width:12px;
+height:12px;
+background:#ff4d4d;
+border-radius:50%;
+}
+
+.heart::before{top:-6px;}
+.heart::after{left:-6px;}
+
+@keyframes float{
+0%{transform:translateY(0) rotate(45deg);opacity:1;}
+100%{transform:translateY(-700px) rotate(45deg);opacity:0;}
+}
+
+.h1{left:10%; bottom:-20px;}
+.h2{left:20%; bottom:-30px; animation-delay:1s;}
+.h3{left:35%; bottom:-25px; animation-delay:2s;}
+.h4{left:50%; bottom:-20px; animation-delay:3s;}
+.h5{left:65%; bottom:-35px; animation-delay:1.5s;}
+.h6{left:80%; bottom:-25px; animation-delay:2.5s;}
+.h7{left:90%; bottom:-30px; animation-delay:4s;}
+.h8{left:75%; bottom:-20px; animation-delay:3.5s;}
+
+@keyframes appear{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
